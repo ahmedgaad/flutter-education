@@ -35,9 +35,36 @@ Widget defaultButton({
   );
 }
 
-Widget defaultFormField() {
-  return TextFormField(
-    autofocus: true,
+Widget defaultFormField({
+  String? hint,
+  bool? isPassword = false,
+  required final TextInputType type,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(
+      horizontal: 20.0,
+    ),
+    child: TextFormField(
+      keyboardType: type,
+      obscureText: isPassword ?? false,
+      textDirection: TextDirection.rtl,
+      // autofocus: true,
+      decoration:  InputDecoration(
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              12.0,
+            ),
+          ),
+        ),
+        hintText: hint,
+        hintStyle: GoogleFonts.poppins(
+          fontSize: 16.0,
+          color: const Color(0xFFA3A3AE),
+          fontWeight: FontWeight.w400,
+        ),
+        hintTextDirection: TextDirection.rtl
+      ),
+    ),
   );
 }
-

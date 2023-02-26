@@ -1,3 +1,5 @@
+import 'package:education/layout/home.dart';
+import 'package:education/modules/signup.dart';
 import 'package:education/shared/components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +14,7 @@ class LoginScreen extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 32.0, top: 65.0),
@@ -27,7 +30,67 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              defaultFormField(),
+              const SizedBox(
+                height: 59.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  ':أسم المستخدم',
+                  style: GoogleFonts.poppins(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff161C2B),
+                  ),
+                ),
+              ),
+              defaultFormField(type: TextInputType.name, hint: 'الأسم'),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0, right: 20.0),
+                child: Text(
+                  ':كلمة المرور',
+                  style: GoogleFonts.poppins(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff161C2B),
+                  ),
+                ),
+              ),
+              defaultFormField(
+                type: TextInputType.visiblePassword,
+                hint: '*************',
+                isPassword: true,
+              ),
+              const SizedBox(
+                height: 21.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: defaultButton(function: () {
+                  Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const HomeScreen(),
+                        ),
+                      );
+                }, text: 'تسجيل الدخول'),
+              ),
+              const SizedBox(
+                height: 21.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: defaultButton(
+                    function: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SignUp(),
+                        ),
+                      );
+                    },
+                    text: 'غير مسجل من قبل؟'),
+              )
             ],
           ),
         ),
