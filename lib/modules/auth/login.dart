@@ -1,8 +1,9 @@
 import 'package:education/layout/home.dart';
-import 'package:education/modules/signup.dart';
+import 'package:education/modules/auth/signup.dart';
 import 'package:education/shared/components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -85,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const SignUp(),
+                          builder: (_) => const SignUpScreen(),
                         ),
                       );
                     },

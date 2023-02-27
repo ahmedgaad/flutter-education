@@ -1,3 +1,4 @@
+import 'package:education/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -49,21 +50,71 @@ Widget defaultFormField({
       obscureText: isPassword ?? false,
       textDirection: TextDirection.rtl,
       // autofocus: true,
-      decoration:  InputDecoration(
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(
-              12.0,
+      decoration: InputDecoration(
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                12.0,
+              ),
             ),
           ),
+          hintText: hint,
+          hintStyle: GoogleFonts.poppins(
+            fontSize: 16.0,
+            color: const Color(0xFFA3A3AE),
+            fontWeight: FontWeight.w400,
+          ),
+          hintTextDirection: TextDirection.rtl),
+    ),
+  );
+}
+
+Widget card({
+  required String image,
+  required String title,
+  required String subTitle,
+  Function()? onTap,
+}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      width: 153,
+      height: 160,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Card(
+        elevation: 14.0,
+        // margin: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Image.asset(
+              image,
+              width: 88.0,
+              height: 84.0,
+            ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.dmSans(
+                fontSize: 14.0,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(
+              height: 1.0,
+            ),
+            Text(
+              subTitle,
+              // textAlign: TextAlign.center,
+              style: GoogleFonts.dmSans(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.w500,
+                  color: const Color(0xFF727272)),
+            ),
+          ],
         ),
-        hintText: hint,
-        hintStyle: GoogleFonts.poppins(
-          fontSize: 16.0,
-          color: const Color(0xFFA3A3AE),
-          fontWeight: FontWeight.w400,
-        ),
-        hintTextDirection: TextDirection.rtl
       ),
     ),
   );

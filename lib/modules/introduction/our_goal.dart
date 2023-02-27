@@ -1,8 +1,8 @@
-import 'package:education/modules/login.dart';
+import 'package:education/modules/auth/login.dart';
 import 'package:education/shared/components.dart';
+import 'package:education/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../shared/constants.dart';
 
 class OurGoal extends StatelessWidget {
   const OurGoal({super.key});

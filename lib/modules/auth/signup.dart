@@ -1,10 +1,10 @@
-import 'package:education/modules/login.dart';
+import 'package:education/modules/auth/login.dart';
 import 'package:education/shared/components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

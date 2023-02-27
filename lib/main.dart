@@ -1,7 +1,6 @@
+import 'package:education/layout/home.dart';
+import 'package:education/modules/introduction/welcome.dart';
 import 'package:flutter/material.dart';
-
-import 'modules/welcome.dart';
-
 void main() {
   runApp(const Education());
 }

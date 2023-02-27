@@ -1,4 +1,4 @@
-import 'package:education/modules/our_goal.dart';
+import 'package:education/modules/introduction/our_goal.dart';
 import 'package:education/shared/components.dart';
 import 'package:education/shared/constants.dart';
 import 'package:flutter/material.dart';
