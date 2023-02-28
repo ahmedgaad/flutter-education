@@ -1,6 +1,9 @@
 import 'package:education/layout/home.dart';
 import 'package:education/modules/introduction/welcome.dart';
 import 'package:flutter/material.dart';
+
+import 'modules/course_details.dart';
+import 'modules/personal_info.dart';
 void main() {
   runApp(const Education());
 }

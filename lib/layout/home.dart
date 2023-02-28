@@ -1,4 +1,5 @@
 import 'package:education/modules/course_details.dart';
+import 'package:education/modules/personal_info.dart';
 import 'package:education/shared/components.dart';
 import 'package:education/shared/constants.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,6 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              // mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
                   height: 192.0,
@@ -62,7 +61,8 @@ class HomeScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.topRight,
                         child: Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
                           child: Text(
                             '،مرحبا\n صباح الخير',
                             textAlign: TextAlign.right,
@@ -76,17 +76,26 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: Container(
-                          height: 40.0,
-                          width: 40.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15.0),
-                            color: Colors.white,
-                          ),
-                          child: const Icon(
-                            Icons.share_outlined,
-                            color: Color(0xFF4E74F9),
-                            size: 30.0,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) =>
+                                        const PsersonalInfoScreen()));
+                          },
+                          child: Container(
+                            height: 40.0,
+                            width: 40.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15.0),
+                              color: Colors.white,
+                            ),
+                            child: const Icon(
+                              Icons.share_outlined,
+                              color: Color(0xFF4E74F9),
+                              size: 30.0,
+                            ),
                           ),
                         ),
                       ),
@@ -179,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               );
                             },
-                            image: '$assetsPath/img4.png',
+                            image: '$assetsPath/img2.png',
                             title: 'قريبا',
                             subTitle: 'Unkown',
                           ),
@@ -192,7 +201,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               );
                             },
-                            image: '$assetsPath/img4.png',
+                            image: '$assetsPath/img1.png',
                             title: 'قريبا',
                             subTitle: 'Unkown',
                           ),
